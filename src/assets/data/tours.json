@@ -1,0 +1,127 @@
+
+ [
+  {
+
+    "title": "Mysteries of Altai shamans",
+    "city": "Gorno-Altaisk",
+    "distance": 300,
+    "price": 99,
+    "maxGroupSize": 10,
+    "desc": "this is the description",
+    "reviews": [
+    ],
+    "avgRating": 4.5,
+    "photo": "/tour-images/tour-img01.jpg", 
+    "featured": true
+  },
+
+
+  {
+ 
+    "title": "Baikal, the pearl of Siberia",
+    "city": "Irkutsk",
+    "distance": 400,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [
+      
+    ],
+    "avgRating": 4.5,
+    "photo": "/tour-images/tour-img02.jpg", 
+    "featured": true
+  },
+
+
+  {
+    "title": "Buddhism heartland",
+    "city": "Ulan-Bator",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [
+      
+    ],
+    "avgRating": 4.5,
+     "photo": "/tour-images/tour-img03.jpg", 
+    "featured": true
+  },
+
+
+  {
+    "title": "Dog-sledges in the Russian Arctic",
+    "city": "Yakutsk",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+    "avgRating": 4.5,
+     "photo": "/tour-images/tour-img04.jpg", 
+    "featured": true
+  },
+  {
+     
+    "title": "Crossing Kamchatka Peninsula",
+    "city": "Petropavlovsk",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+    "avgRating": 4.5,
+  "photo": "/tour-images/tour-img05.jpg", 
+    "featured": false
+  },
+
+
+
+  {
+    "title": "Nomads of Khazakhstan",
+    "city": "Astana",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+    "avgRating": 4.5,
+  "photo": "/tour-images/tour-img06.jpg", 
+    "featured": false
+  },
+
+
+  {
+    "title": "Rockclimbing in Kyrgyzstan",
+    "city": "Bishkek",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [
+     
+    ],
+    "avgRating": 4.5,
+      "photo": "/tour-images/tour-img07.jpg", 
+    "featured": false
+  },
+
+
+
+
+  {
+    "title": "Great Silk Road",
+    "city": "Samarkand",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [
+    ],
+    "avgRating": 4.5,
+     "photo": "/tour-images/tour-img08.jpg", 
+    "featured": false
+  }
+]
+
+ 
