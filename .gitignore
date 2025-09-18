@@ -1,0 +1,16 @@
+ # Ignore all node_modules folders, anywhere in the proj
+
+**/node_modules/
+
+# Bruno workspace
+bruno/
+
+
+**/.env 
+**/.log 
+**/.vscode/
+**/.DS_Store
+
+
+
+
