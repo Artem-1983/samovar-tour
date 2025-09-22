@@ -6,29 +6,46 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
   try {
-    //hashing password
+    const { username, email, password } = req.body;
 
-    const salt = bcrypt.genSaltSync(10);
+    if (!username || !email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
 
-    const hash = bcrypt.hashSync(req.body.password, salt);
+    const salt = await bcrypt.genSaltSync(10);
+    const hash = await bcrypt.hashSync(password, salt);
 
     const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
+      username,
+      email,
       password: hash,
     });
 
     await newUser.save();
 
-    const user = newUser;
-
-    res
-      .status(200)
-      .json({ success: true, message: "Successfully created", user });
+    res.status(200).json({
+      success: true,
+      message: "Successfully created",
+      user: newUser,
+    });
   } catch (err) {
-    res
-      .status(500)
-      .json({ success: false, message: "Failed to create. Try again" });
+    console.error("Error in registration:", err);
+
+    if (err.code === 11000) {
+      const field = Object.keys(err.keyPattern)[0];
+      return res.status(400).json({
+        success: false,
+        message: `The ${field} is already in use.`,
+      });
+    }
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to create. Try again",
+    });
   }
 };
 

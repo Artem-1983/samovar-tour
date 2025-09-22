@@ -11,9 +11,9 @@ const Register = () => {
 
 
     const [credentials, setCredentials] = useState({
-        username: undefined,
-        email: undefined,
-        password: undefined
+        username: '',
+        email: '',
+        password: ''
     })
 
     const { dispatch } = useContext(AuthContext)
@@ -29,7 +29,13 @@ const Register = () => {
 
         console.log(credentials)
 
+        if (!credentials.username || !credentials.email || !credentials.password) {
+            alert("All fields are required.");
+            return;
+        }
+
         try {
+
             const res = await fetch(`${BASE_URL}/auth/register`, {
                 method: 'POST',
                 headers: {
@@ -47,13 +53,18 @@ const Register = () => {
             }
 
 
-            const { user } = result;
 
-            console.log(result.user)
+            if (result.success && result.user) {
+                const { user } = result;  // Destructure user object
 
-            dispatch({ type: 'REGISTER_SUCCESS', payload: user })
-            alert(`Registration successful! Welcome to your account, ${user.username}!`)
-            navigate('/')
+                // Now you can safely use user.username
+                dispatch({ type: 'REGISTER_SUCCESS', payload: user });
+                alert(`Registration successful! Welcome to your account, ${user.username}!`);
+                navigate('/');  // Redirect to home or dashboard
+            } else {
+                alert('Unexpected error occurred.');
+                navigate('/register');
+            }
 
 
         } catch (err) {
@@ -83,15 +94,37 @@ const Register = () => {
                                 <h2>Register</h2>
                                 <Form onSubmit={handleClick}>
                                     <FormGroup>
-                                        <input type="text" placeholder="Username" required id="username" onChange={handleChange} />
+                                        <input
+                                            type="text"
+                                            placeholder="Username"
+                                            required
+                                            id="username"
+                                            value={credentials.username}
+                                            onChange={handleChange}
+                                        />
+
                                     </FormGroup>
 
                                     <FormGroup>
-                                        <input type="text" placeholder="Email" required id="email" onChange={handleChange} />
+                                        <input
+                                            type="email"
+                                            placeholder="Email"
+                                            required
+                                            id="email"
+                                            value={credentials.email}
+                                            onChange={handleChange}
+                                        />
                                     </FormGroup>
 
                                     <FormGroup>
-                                        <input type="password" placeholder="Password" required id="password" onChange={handleChange} />
+                                        <input
+                                            type="password"
+                                            placeholder="Password"
+                                            required
+                                            id="password"
+                                            value={credentials.password}
+                                            onChange={handleChange}
+                                        />
                                     </FormGroup>
 
                                     <Button type="submit" className='btn secondary__btn auth__btn' onClick={handleClick}>Create Account</Button>
