@@ -19,7 +19,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin:
+    process.env.NODE_ENV === "production"
+      ? "https://your-frontend-url.com"
+      : "http://localhost:3000", // Use your production URL here
   credentials: true,
 };
 
@@ -41,16 +44,23 @@ app.use(express.json());
 
 app.use(cors(corsOptions));
 app.use(cookieParser());
+
 app.use(
   "/uploads",
   (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      process.env.NODE_ENV === "production"
+        ? "https://your-frontend-url.com"
+        : "http://localhost:3000"
+    );
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
     next();
   },
   express.static(path.join(__dirname, "uploads"))
 );
+
 // Routes
 
 app.use("/api/v1/auth", authRoute);
