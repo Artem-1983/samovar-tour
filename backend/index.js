@@ -21,8 +21,8 @@ const __dirname = path.dirname(__filename);
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
-      ? "https://your-frontend-url.com"
-      : "http://localhost:3000", // Use your production URL here
+      ? "https://samovar-tours-frontend.onrender.com"
+      : "http://localhost:3000", // development (React default)
   credentials: true,
 };
 
