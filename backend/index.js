@@ -45,21 +45,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
-app.use(
-  "/uploads",
-  (req, res, next) => {
-    res.setHeader(
-      "Access-Control-Allow-Origin",
-      process.env.NODE_ENV === "production"
-        ? "https://samovar-tours-frontend.onrender.com"
-        : "http://localhost:3000"
-    );
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
-    next();
-  },
-  express.static(path.join(__dirname, "uploads"))
-);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
 
