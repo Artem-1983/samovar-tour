@@ -111,7 +111,7 @@ const TourDetails = () => {
                     <Row>
                         <Col lg="8">
                             <div className="tour__content">
-                                <img className="tour__img" src={`http://localhost:4000${photo}`} alt="tour-img" />
+                                <img className="tour__img" src={`https://samovar-tour.onrender.com${photo}`} alt="tour-img" />
 
                                 <div className="tour__info">
                                     <h2>{title}</h2>

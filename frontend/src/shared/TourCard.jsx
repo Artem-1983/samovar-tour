@@ -18,7 +18,7 @@ const TourCard = ({ tour }) => {
 
             <Card>
                 <div className="tour__img">
-                    <img src={`http://localhost:4000${photo}`} alt="tour-img" />
+                    <img src={`https://samovar-tour.onrender.com${photo}`} alt="tour-img" />
                     {featured && <span>Featured</span>}
                 </div>
 
