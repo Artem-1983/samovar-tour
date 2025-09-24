@@ -51,7 +51,7 @@ app.use(
     res.setHeader(
       "Access-Control-Allow-Origin",
       process.env.NODE_ENV === "production"
-        ? "https://your-frontend-url.com"
+        ? "https://samovar-tours-frontend.onrender.com"
         : "http://localhost:3000"
     );
     res.setHeader("Access-Control-Allow-Credentials", "true");
