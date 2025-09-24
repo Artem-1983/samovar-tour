@@ -1,16 +1,22 @@
- # Ignore all node_modules folders, anywhere in the proj
-
+# Ignore all node_modules folders, anywhere in the project
 **/node_modules/
 
-# Bruno workspace
+# Ignore frontend build output
+frontend/build/
+
+# Ignore Git folder (note: usually unnecessary unless you're zipping or copying the repo)
+.git/
+
+# Ignore Bruno workspace (API testing tool)
 bruno/
 
+# Ignore all .env files anywhere
+**/.env
+**/.env.*
 
-**/.env 
-**/.log 
-**/.vscode/
-**/.DS_Store
+# Ignore log files
+*.log
 
-
-
-
+# Ignore system and editor folders
+.vscode/
+.DS_Store 
