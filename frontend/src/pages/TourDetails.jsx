@@ -149,21 +149,26 @@ const TourDetails = () => {
 
                                     <Form onSubmit={submitHandler}>
                                         <div className="d-flex align-items-center gap-3 mb-4 rating__group">
-                                            1<span onClick={() => setTourRating(1)}>
-                                                <i className={`ri-star-s-fill ${tourRating === 1 ? 'ri-star-active' : ''}`}></i>
-                                            </span>
-                                            2<span onClick={() => setTourRating(2)}>
-                                                <i className={`ri-star-s-fill ${tourRating === 2 ? 'ri-star-active' : ''}`}></i>
-                                            </span>
-                                            3<span onClick={() => setTourRating(3)}>
-                                                <i className={`ri-star-s-fill ${tourRating === 3 ? 'ri-star-active' : ''}`}></i>
-                                            </span>
-                                            4<span onClick={() => setTourRating(4)}>
-                                                <i className={`ri-star-s-fill ${tourRating === 4 ? 'ri-star-active' : ''}`}></i>
-                                            </span>
-                                            5<span onClick={() => setTourRating(5)}>
-                                                <i className={`ri-star-s-fill ${tourRating === 5 ? 'ri-star-active' : ''}`}></i>
-                                            </span>
+                                            <div>
+                                                1<span onClick={() => setTourRating(1)}>
+                                                    <i className={`ri-star-s-fill ${tourRating === 1 ? 'ri-star-active' : ''}`}></i>
+                                                </span>
+                                                2<span onClick={() => setTourRating(2)}>
+                                                    <i className={`ri-star-s-fill ${tourRating === 2 ? 'ri-star-active' : ''}`}></i>
+                                                </span>
+                                                3<span onClick={() => setTourRating(3)}>
+                                                    <i className={`ri-star-s-fill ${tourRating === 3 ? 'ri-star-active' : ''}`}></i>
+                                                </span>
+                                                4<span onClick={() => setTourRating(4)}>
+                                                    <i className={`ri-star-s-fill ${tourRating === 4 ? 'ri-star-active' : ''}`}></i>
+                                                </span>
+                                                5<span onClick={() => setTourRating(5)}>
+                                                    <i className={`ri-star-s-fill ${tourRating === 5 ? 'ri-star-active' : ''}`}></i>
+                                                </span>
+                                            </div>
+
+
+
                                             <div className="review__input">
                                                 <input type="text" placeholder='Share your thoughts' ref={reviewMsgRef} required />
                                                 <button type="submit" className="btn primary__btn text-white">Submit</button>
