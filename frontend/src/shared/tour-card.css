@@ -100,3 +100,20 @@
     background: var(--primary-color) !important;
     color: #fff !important;
 }
+
+@media only screen and (max-width: 576px) {
+    .tour__title {
+        font-size: 1rem;
+    }
+
+    .booking__btn a {
+        font-size: 0.8rem;
+
+    }
+
+    .booking__btn {
+        padding: 0.2rem 0.5rem !important;
+    }
+
+
+}

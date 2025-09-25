@@ -109,7 +109,7 @@ const TourDetails = () => {
 
                 {!loading && !error && (
                     <Row>
-                        <Col lg="8">
+                        <Col lg="8" md="12" sm="12">
                             <div className="tour__content">
                                 <img className="tour__img" src={`https://samovar-tour.onrender.com${photo}`} alt="tour-img" />
 
@@ -205,7 +205,7 @@ const TourDetails = () => {
                             </div>
                         </Col>
 
-                        <Col lg="4"><Booking tour={tour} avgRating={avgRating} /></Col>
+                        <Col lg="4" md="12" sm="12"><Booking tour={tour} avgRating={avgRating} /></Col>
                     </Row>
                 )
 

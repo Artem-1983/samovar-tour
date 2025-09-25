@@ -53,3 +53,25 @@
 
      }
  }
+
+ @media only screen and (max-width:576px) {
+     .search__bar form .form__group {
+         width: 100%;
+     }
+
+     .form__group input {
+         font-size: 0.7rem;
+     }
+
+     .form__group span {
+         font-size: 1.1rem;
+     }
+
+     .form__group h6 {
+         font-size: 1rem;
+     }
+
+
+
+
+ }
