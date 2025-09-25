@@ -117,6 +117,7 @@
      font-weight: 500;
  }
 
+
  .i-star-s-fill::before {
      transition: .2s all ease-out;
  }
@@ -128,4 +129,21 @@
  .ri-star-active {
      color: var(--primary-color);
      transform: scale(1.5);
+ }
+
+ @media only screen and (max-width:768px) {
+     .tour__extra-details {
+         flex-wrap: wrap;
+         row-gap: 1rem;
+     }
+
+     .tour__extra-details span {
+         font-size: .9rem;
+
+     }
+
+     .tour__extra-details i {
+         font-size: 1rem;
+
+     }
  }
