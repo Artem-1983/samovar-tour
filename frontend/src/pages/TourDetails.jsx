@@ -149,7 +149,7 @@ const TourDetails = () => {
 
                                     <Form onSubmit={submitHandler}>
                                         <div className="d-flex align-items-center gap-3 mb-4 rating__group">
-                                            <div>
+                                            <div className='d-flex align-items-center gap-3 mb-4'>
                                                 1<span onClick={() => setTourRating(1)}>
                                                     <i className={`ri-star-s-fill ${tourRating === 1 ? 'ri-star-active' : ''}`}></i>
                                                 </span>
