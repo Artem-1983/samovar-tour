@@ -37,3 +37,19 @@
      border-radius: 10px 5px 10px 5px;
      cursor: pointer;
  }
+
+ @media only screen and (max-width:992px) {
+     .search__bar {
+         width: 100%;
+     }
+
+     .search__bar form {
+         flex-wrap: wrap;
+     }
+
+     .search__bar form .form__group {
+         width: 48%;
+
+
+     }
+ }
