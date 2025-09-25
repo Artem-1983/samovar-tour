@@ -54,4 +54,15 @@
     color: var(--heading-color);
     font-size: 1.1rem;
 
+
+}
+
+@media only screen and (max-width: 768px) {
+    .newsletter__input {
+        width: 100%;
+    }
+
+    .newsletter__input .newsletter__btn {
+        padding: .2rem 0.5rem !important;
+    }
 }
