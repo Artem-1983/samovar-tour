@@ -40,6 +40,26 @@
      object-fit: cover;
  }
 
+
+ .video-thumbnail {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .play-button {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 60px;
+     height: 60px;
+     background: url('https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg') no-repeat center center;
+     background-size: contain;
+     opacity: 0.8;
+     pointer-events: none;
+ }
+
+
  .services__subtitle {
      font-size: 2.2rem;
      font-weight: 500;
