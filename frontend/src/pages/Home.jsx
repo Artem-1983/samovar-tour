@@ -1,13 +1,9 @@
-import React from 'react';
+import React from 'react'
 import '../styles/home.css'
 import { Container, Col, Row } from 'reactstrap'
 import Subtitle from '../shared/Subtitle'
-import LazyVideo from '../shared/LazyVideo'
 import experienceImg from '../assets/images/experience.png'
 import worldImg from '../assets/images/world.png'
-import thumb1 from '../assets/videos/thumb-1.png'
-import thumb2 from '../assets/videos/thumb-1.png'
-import thumb3 from '../assets/videos/thumb-1.png'
 import heroVideo1 from '../assets/videos/video-1.mp4'
 import heroVideo2 from '../assets/videos/video-2.mp4'
 import heroVideo3 from '../assets/videos/video-3.mp4'
@@ -41,20 +37,23 @@ const Home = () => {
 
                     <Col lg="2">
                         <div className="hero__img-box">
-                            <LazyVideo videoSrc={heroVideo1} posterImg={thumb1} />
+                            <video src={heroVideo1} alt="" controls />
                         </div>
                     </Col>
+
+
 
                     <Col lg="2">
                         <div className="hero__img-box mt-4">
-                            <LazyVideo videoSrc={heroVideo2} posterImg={thumb2} />
+                            <video src={heroVideo2} alt="" controls />
                         </div>
                     </Col>
 
-                    <Col lg="2">
-                        <div className="hero__img-box mt-5">
-                            <LazyVideo videoSrc={heroVideo3} posterImg={thumb3} />
-                        </div>
+
+
+                    <Col lg="2"> <div className="hero__img-box mt-5">
+                        <video src={heroVideo3} alt="" controls />
+                    </div>
                     </Col>
 
                     <SearchBar />
