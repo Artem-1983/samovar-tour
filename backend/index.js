@@ -18,15 +18,25 @@ const port = process.env.PORT || 8000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Adjust the CORS configuration
 const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? "https://samovar-tours-frontend.onrender.com"
-      : "http://localhost:3000", // development (React default)
-  credentials: true,
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:3000", // Allow localhost during development
+      "https://samovar-tours-frontend.onrender.com", // Allow production URL
+    ];
+
+    // Allow requests from localhost and production frontend
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // Allow credentials (cookies) to be sent
 };
 
-// database connection
+// Database connection
 mongoose.set("strictQuery", false);
 
 const connect = async () => {
@@ -38,24 +48,20 @@ const connect = async () => {
   }
 };
 
-// middleware
-
+// Middleware setup
 app.use(express.json());
-
-app.use(cors(corsOptions));
-
+app.use(cors(corsOptions)); // Apply CORS middleware with our custom options
 app.use(cookieParser());
-
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
-
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/tours", tourRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/review", reviewRoute);
 app.use("/api/v1/booking", bookingRoute);
 
+// Start the server
 app.listen(port, () => {
   connect();
   console.log(`Server running on http://localhost:${port}`);
