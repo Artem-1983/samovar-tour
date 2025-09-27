@@ -3,6 +3,7 @@ import './footer.css'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
+import LazyLoad from 'react-lazyload'; // Import LazyLoad from react-lazyload
 
 const quick__links = [
     {
@@ -21,8 +22,6 @@ const quick__links = [
     },
 ]
 
-
-
 const quick__links2 = [
     {
         path: '/gallery',
@@ -40,38 +39,41 @@ const quick__links2 = [
     },
 ]
 
-
 const Footer = () => {
 
     const year = new Date().getFullYear()
 
-
     return <footer className="footer">
         <Container>
             <Row>
-
                 <Col lg="3">
                     <div className="footer__logo">
                         <img src={logo} alt="" />
 
                         <div className="social__links d-flex align-items-center gap-4">
-                            <span>
-                                <Link to="#" class="ri-youtube-fill"></Link>
-                            </span>
-                            <span>
-                                <Link to="#" class="ri-vk-fill"></Link>
-                            </span>
-                            <span>
-                                <Link to="#" class="ri-facebook-circle-line"></Link>
-                            </span>
-                            <span>
-                                <Link to="#" class="ri-instagram-line"></Link>
-                            </span>
+                            <LazyLoad height={20} offset={100}> {/* Lazy load social icons */}
+                                <span>
+                                    <Link to="#" className="ri-youtube-fill"></Link>
+                                </span>
+                            </LazyLoad>
+                            <LazyLoad height={20} offset={100}>
+                                <span>
+                                    <Link to="#" className="ri-vk-fill"></Link>
+                                </span>
+                            </LazyLoad>
+                            <LazyLoad height={20} offset={100}>
+                                <span>
+                                    <Link to="#" className="ri-facebook-circle-line"></Link>
+                                </span>
+                            </LazyLoad>
+                            <LazyLoad height={20} offset={100}>
+                                <span>
+                                    <Link to="#" className="ri-instagram-line"></Link>
+                                </span>
+                            </LazyLoad>
                         </div>
                     </div>
                 </Col>
-
-
 
                 <Col lg="3">
                     <h5 className='footer__link-title'>Discover</h5>
@@ -84,8 +86,6 @@ const Footer = () => {
                     </ListGroup>
                 </Col>
 
-
-
                 <Col lg="3">
                     <h5 className='footer__link-title'>Quick Links</h5>
                     <ListGroup className='footer__quick-links'>
@@ -95,49 +95,34 @@ const Footer = () => {
                             </ListGroupItem>
                         ))}
                     </ListGroup>
-
                 </Col>
 
-
-
                 <Col lg="3">
-
                     <h5 className='footer__link-title'>Contact</h5>
                     <ListGroup className='footer__quick-links'>
                         <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
-
-                            <h6 className='mb-0 d-flex align-items-center'><span><i class="ri-map-pin-line"></i></span>
-                                Address: </h6>
+                            <h6 className='mb-0 d-flex align-items-center'><span><i className="ri-map-pin-line"></i></span> Address: </h6>
                             <p className='mb-0'>SH Diana, worldwide</p>
                         </ListGroupItem>
 
                         <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
-
-                            <h6 className='mb-0 d-flex align-items-center'><span><i class="ri-mail-line"></i></span>
-                                Email </h6>
+                            <h6 className='mb-0 d-flex align-items-center'><span><i className="ri-mail-line"></i></span> Email </h6>
                             <p className='mb-0'>rabogoshvili_art@inbox.ru</p>
-
                         </ListGroupItem>
 
                         <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
-
-                            <h6 className='mb-0 d-flex align-items-center'><span><i class="ri-phone-fill"></i></span>
-                                Phone</h6>
+                            <h6 className='mb-0 d-flex align-items-center'><span><i className="ri-phone-fill"></i></span> Phone</h6>
                             <p className='mb-0'>+123456789</p>
-
                         </ListGroupItem>
                     </ListGroup>
                 </Col>
 
-
                 <Col lg="12" className='text-center pt-5'>
-                    <p className="copyright">Copyright{year}</p>
+                    <p className="copyright">Copyright {year}</p>
                 </Col>
             </Row>
         </Container>
     </footer>
-
 }
 
-export default Footer
-
+export default Footer 
