@@ -147,6 +147,7 @@ const TourDetails = () => {
                                 <div className="tour__reviews mt-4">
                                     <h4>Review({reviews?.length} reviews)</h4>
 
+
                                     <Form onSubmit={submitHandler}>
                                         <div className="d-flex align-items-center gap-3 mb-4 rating__group">
                                             <div className='d-flex align-items-center gap-3 mb-4'>

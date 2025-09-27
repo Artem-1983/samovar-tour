@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import Header from './../Header/Header'
 import Footer from './../Footer/Footer'
-import Routers from './../../router/Routers'
+
+// Lazy load the Router component
+const Routers = lazy(() => import('./../../router/Routers'))
 
 const Layout = () => {
     return (
         <>
             <Header />
-            <Routers />
+            <Suspense fallback={<div className="loading">Loading...</div>}>
+                <Routers />
+            </Suspense>
             <Footer />
         </>
     )
