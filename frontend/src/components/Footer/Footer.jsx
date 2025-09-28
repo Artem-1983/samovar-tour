@@ -3,7 +3,7 @@ import './footer.css'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
-import { useInView } from 'react-intersection-observer'  // Import the hook
+import { useInView } from 'react-intersection-observer'
 
 const quick__links = [
     { path: '/home', display: 'Home' },
@@ -20,20 +20,18 @@ const quick__links2 = [
 const Footer = () => {
     const year = new Date().getFullYear()
 
-    // In-view hook for lazy loading the social icons
     const { ref, inView } = useInView({
-        triggerOnce: true,  // Lazy load when the element enters the viewport
-        threshold: 0.1,     // Trigger when 10% of the element is visible
+        triggerOnce: true,
+        threshold: 0.1,
     })
 
     return (
         <footer className="footer">
             <Container>
                 <Row>
-                    <Col lg="3">
+                    <Col lg="3" className="footer__column">
                         <div className="footer__logo">
                             <img src={logo} alt="Logo" />
-
                             <div ref={ref} className="social__links d-flex align-items-center gap-4">
                                 {inView && (
                                     <>
@@ -55,7 +53,7 @@ const Footer = () => {
                         </div>
                     </Col>
 
-                    <Col lg="3">
+                    <Col lg="3" className="footer__column">
                         <h5 className='footer__link-title'>Discover</h5>
                         <ListGroup className='footer__quick-links'>
                             {quick__links.map((item, index) => (
@@ -66,7 +64,7 @@ const Footer = () => {
                         </ListGroup>
                     </Col>
 
-                    <Col lg="3">
+                    <Col lg="3" className="footer__column">
                         <h5 className='footer__link-title'>Quick Links</h5>
                         <ListGroup className='footer__quick-links'>
                             {quick__links2.map((item, index) => (
@@ -77,7 +75,7 @@ const Footer = () => {
                         </ListGroup>
                     </Col>
 
-                    <Col lg="3">
+                    <Col lg="3" className="footer__column">
                         <h5 className='footer__link-title'>Contact</h5>
                         <ListGroup className='footer__quick-links'>
                             <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
@@ -89,14 +87,14 @@ const Footer = () => {
 
                             <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
                                 <h6 className='mb-0 d-flex align-items-center'>
-                                    <span><i className="ri-mail-line"></i></span> Email
+                                    <span><i className="ri-mail-line"></i></span> Email:
                                 </h6>
                                 <p className='mb-0'>rabogoshvili_art@inbox.ru</p>
                             </ListGroupItem>
 
                             <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
                                 <h6 className='mb-0 d-flex align-items-center'>
-                                    <span><i className="ri-phone-fill"></i></span> Phone
+                                    <span><i className="ri-phone-fill"></i></span> Phone:
                                 </h6>
                                 <p className='mb-0'>+123456789</p>
                             </ListGroupItem>
@@ -113,3 +111,7 @@ const Footer = () => {
 }
 
 export default Footer
+
+
+
+

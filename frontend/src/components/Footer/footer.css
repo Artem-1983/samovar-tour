@@ -1,53 +1,170 @@
- .footer {
-     padding-top: 70px;
-     padding-bottom: 30px;
- }
+.footer {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    background-color: #f8f9fa;
+    /* Light footer background */
+}
+
+/* Column Styling */
+.footer__column {
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Apply background and shadow to the whole column including title + content */
+.footer__column:nth-child(odd) {
+    background-color: #f1f1f1;
+    /* Light gray background for odd columns */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Light box shadow for odd columns */
+}
+
+.footer__column:nth-child(even) {
+    background-color: #ffffff;
+    /* White background for even columns */
+    box-shadow: none;
+    /* No box shadow for even columns */
+}
+
+/* Make sure the content inside the column also inherits the background */
+.footer__column .footer__link-title,
+.footer__column .footer__quick-links,
+.footer__column .footer__quick-links li {
+    background-color: inherit;
+    /* Inherit the background color from the parent column */
+    color: var(--text-color);
+    /* Ensure text color is readable */
+}
+
+/* Footer Logo */
+.footer__logo {
+    height: 60px;
+    margin-bottom: 20px;
+    /* Increased bottom margin for better spacing */
+    display: flex;
+    flex-direction: column;
+    /* Stacked vertically on larger screens */
+    align-items: flex-start;
 
 
- .footer__logo {
-     height: 60px;
- }
+    /* Align to the left by default */
+}
 
- .footer__logo img {
-     display: block;
-     height: 100%;
-     margin-bottom: 1rem;
- }
+.footer__logo img {
+    display: block;
+    height: 100%;
+    margin-bottom: 1rem;
+}
 
- .footer__logo p {
-     color: var(--text-color);
- }
+.social__links {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.social__links span a {
+    text-decoration: none;
+    color: var(--heading-color);
+    font-size: 2rem;
+}
+
+/* Footer Titles */
+.footer__link-title {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer Links */
+.footer__quick-links {
+    margin-top: 50px;
+}
+
+.footer__quick-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.footer__quick-links h6 span i {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-right: 1rem;
+}
+
+.footer__quick-links p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+}
+
+/* Copyright Text */
+.copyright {
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Mobile Responsiveness */
 
 
- .social__links span a {
-     text-decoration: none;
-     color: var(--heading-color);
-     font-size: 2rem;
- }
+/* Logo and social media icons should be in one row and centered vertically on small screens */
+@media (max-width: 991px) {
+    .footer__logo {
+        flex-direction: row;
+        /* Align items horizontally */
+        justify-content: space-between;
+        /* Space out logo and social media icons */
+        align-items: center;
+        /* Vertically center them */
 
- .footer__link-title {
-     color: var(--heading-color);
-     margin-bottom: 1rem;
- }
+    }
 
- .footer__quick-links {
-     margin-top: 50px;
- }
 
- .footer__quick-links li a {
-     text-decoration: none;
-     color: var(--text-color);
-     font-size: 1rem;
+}
 
- }
 
- .footer__quick-links h6 span i {
-     color: var(--secondary-color);
-     font-size: 1.1rem;
-     margin-right: 1rem;
- }
+@media (max-width: 768px) {
 
- .copyright {
-     color: var(--text-color);
-     font-size: 1rem;
- }
+    /* Adjust logo size on small screens */
+    .footer__logo img {
+        height: 50px;
+    }
+
+    /* Stack the columns vertically with space between them */
+    .footer__column {
+        width: 100%;
+        margin-bottom: 20px;
+        /* Space between stacked columns */
+    }
+
+    .social__links {
+        gap: 15px;
+        /* Slightly larger gap for better spacing on mobile */
+    }
+
+    .footer__link-title {
+        font-size: 1.2rem;
+        /* Slightly larger titles for small screens */
+    }
+
+    .footer__quick-links li a {
+        font-size: 0.9rem;
+        /* Smaller font size for mobile */
+    }
+
+    .footer__contact-info p {
+        font-size: 0.9rem;
+        /* Adjust contact text size */
+    }
+
+    /* Greyish background and shadow for the copyright row on mobile */
+    .copyright {
+        background-color: #f1f1f1;
+        /* Greyish background */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Light box shadow */
+    }
+}
