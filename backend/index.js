@@ -22,8 +22,10 @@ const __dirname = path.dirname(__filename);
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
-      "http://localhost:3000", // Allow localhost during development
-      "https://samovar-tours-frontend.onrender.com", // Allow production URL
+      "http://localhost:3000", // Dev
+      "https://samovar-tours-frontend.onrender.com", // Old Render preview URL
+      "https://samovar-tours.ru", // ✅ New root domain
+      "https://www.samovar-tours.ru", // ✅ www version too
     ];
 
     // Allow requests from localhost and production frontend
